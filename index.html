@@ -8,34 +8,34 @@
   <link rel="stylesheet" href="style.css" media="screen">
 </head>
 <body class="page">
-  <div class="eis-matrix">
-    <img class="eis-matrix__img" src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
-    <a class="eis-matrix__info" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  <div class="matrix">
+    <img class="matrix__img" src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
+    <a class="matrix__info" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
   </div>
   <div class="main-content">
     <div class="add-item">
       <h3 class="add-item__label">Add Item</h3>
       <div class="add-item__input-wrapper">
-        <input class="add-item__task task__input input-text" id="new-task" type="text">
-        <button class="btn add-item__button">Add</button>
+        <input class="add-item__task text-input" id="new-task" type="text">
+        <button class="btn">Add</button>
       </div>
     </div>
     <div class="todo-list">
       <h3 class="todo-list__title">Todo</h3>
       <ul class="todo-list__tasks" id="todo-tasks">
-        <li class="tasks__list">
-          <input class="input-checkbox" type="checkbox">
+        <li class="tasks__item">
+          <input class="checkbox-input" type="checkbox">
           <label class="task__label">Pay Bills</label>
-          <input class="task__input input-text" type="text">
+          <input class="text-input" type="text">
           <button class="btn btn--edit">Edit</button>
           <button class="btn btn--delete">
             <img src="./remove.svg" alt="remove">
           </button>
         </li>
-        <li class="tasks__list edit-mode">
-          <input class="input-checkbox" type="checkbox">
+        <li class="tasks__item edit-mode">
+          <input class="checkbox-input" type="checkbox">
           <label class="task__label">Go Shopping</label>
-          <input class="task__input input-text" type="text" value="Go Shopping">
+          <input class="text-input" type="text" value="Go Shopping">
           <button class="btn btn--edit">Save</button>
           <button class="btn btn--delete">
             <img src="./remove.svg" alt="remove">
@@ -44,12 +44,12 @@
       </ul>
     </div>
     <div class="completed-list">
-      <h3 class="completed-tasks__title">Completed</h3>
+      <h3 class="completed-list__title">Completed</h3>
       <ul class="completed-list__tasks" id="completed-tasks">
-        <li class="tasks__list">
-          <input class="input-checkbox" type="checkbox" checked>
+        <li class="tasks__item">
+          <input class="checkbox-input" type="checkbox" checked>
           <label class="task__label completed-tasks__label">See the Doctor</label>
-          <input class="task__input input-text" type="text">
+          <input class="text-input" type="text">
           <button class="btn btn--edit">Edit</button>
           <button class="btn btn--delete">
             <img src="./remove.svg" alt="remove">
