@@ -129,7 +129,8 @@ var taskCompleted = function(){
     label.className = "task__label completed-tasks__label";
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-
+    var editBtn = listItem.querySelector(".btn--edit");
+    editBtn.innerText = "Edit";
 }
 
 
@@ -144,6 +145,8 @@ var taskIncomplete = function(){
     label.className = "task__label";
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
+    var editBtn = listItem.querySelector(".btn--edit");
+    editBtn.innerText = "Edit";
 }
 
 
