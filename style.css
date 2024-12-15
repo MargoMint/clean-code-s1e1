@@ -120,12 +120,12 @@ button {
 .tasks__item > .text-input {
   width: 226px;
 }
-.btn--delete img {
+.btn__img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.btn--delete img:hover {
+.btn__img:hover {
   transform: rotateZ(0);
 }
 
@@ -144,6 +144,6 @@ button {
   display: inline-block;
   width: 224px;
 }
-.edit-mode label {
+.edit-mode .task__label {
   display: none;
 }
