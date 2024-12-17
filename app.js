@@ -30,24 +30,25 @@ var createNewTaskElement = function(taskString){
 
     //button.delete
     var deleteButton = document.createElement("button");//delete button
-    deleteButton.className = "btn";
+    deleteButton.className = "section__btn";
+  
     var deleteButtonImg = document.createElement("img");//delete button image
-    deleteButtonImg.className = "btn__img";
-    listItem.className = "tasks__item";
+    deleteButtonImg.className = "section__img";
+    listItem.className = "section__tasks-item";
     label.innerText = taskString;
-    label.className = "task__label";
+    label.className = "section__label";
 
     //Each elements, needs appending
     checkBox.type = "checkbox";
-    checkBox.className = "checkbox-input";
+    checkBox.className = "section__checkbox-input";
 
     editInput.type = "text";
-    editInput.className = "text-input";
+    editInput.className = "section__text-input";
 
     editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className = "btn btn--edit";
+    editButton.className = "section__btn section__btn--edit";
 
-    deleteButton.className = "btn btn--delete";
+    deleteButton.className = "section__btn section__btn--delete";
     deleteButtonImg.src = './remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -86,10 +87,10 @@ var editTask = function(){
 
     var listItem = this.parentNode;
 
-    var editInput = listItem.querySelector(".text-input");
+    var editInput = listItem.querySelector(".section__text-input");
     var label = listItem.querySelector("label");
-    var editBtn = listItem.querySelector(".btn--edit");
-    var containsClass = listItem.classList.contains("edit-mode");
+    var editBtn = listItem.querySelector(".section__btn--edit");
+    var containsClass = listItem.classList.contains("section__tasks-item--edit");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -103,7 +104,7 @@ var editTask = function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("section__tasks-item--edit");
 };
 
 
@@ -125,11 +126,11 @@ var taskCompleted = function(){
     //Append the task list item to the #completed-tasks
     var listItem = this.parentNode;
     var label = listItem.querySelector("label");
-    listItem.className = "tasks__item";
-    label.className = "task__label completed-tasks__label";
+    listItem.className = "section__tasks-item";
+    label.className = "section__label section__label--completed";
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-    var editBtn = listItem.querySelector(".btn--edit");
+    var editBtn = listItem.querySelector(".section__btn--edit");
     editBtn.innerText = "Edit";
 }
 
@@ -141,11 +142,11 @@ var taskIncomplete = function(){
     //Append the task list item to the #incompleteTasks.
     var listItem = this.parentNode;
     var label = listItem.querySelector("label");
-    listItem.className = "tasks__item";
-    label.className = "task__label";
+    listItem.className = "section__tasks-item";
+    label.className = "section__label";
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
-    var editBtn = listItem.querySelector(".btn--edit");
+    var editBtn = listItem.querySelector(".section__btn--edit");
     editBtn.innerText = "Edit";
 }
 
@@ -167,9 +168,9 @@ addButton.addEventListener("click",ajaxRequest);
 var bindTaskEvents = function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
-    var checkBox = taskListItem.querySelector(".checkbox-input");
-    var editButton = taskListItem.querySelector(".btn--edit");
-    var deleteButton = taskListItem.querySelector(".btn--delete");
+    var checkBox = taskListItem.querySelector(".section__checkbox-input");
+    var editButton = taskListItem.querySelector(".section__btn--edit");
+    var deleteButton = taskListItem.querySelector(".section__btn--delete");
 
 
     //Bind editTask to edit button.
